@@ -1,0 +1,18 @@
+<ng-container *ngIf="show; then thenTemplate"></ng-container>
+<ng-template #thenTemplate>
+    <br>
+    <div class="container text-center col-md-10">
+        <h3>Details post: {{infoPost.id}}</h3>
+        <h2>{{message}}</h2>
+        <br>
+        <h4>{{infoPost.title}}</h4>
+        <p>{{infoPost.body}}</p>
+        <br>
+        <br>
+        <br>
+        <div class="container text-center col-md-8">
+            <app-comentarios (messageEvent)="receiveMessage($event)" [id]=id></app-comentarios>
+        </div>
+    </div>
+</ng-template>
+<br>

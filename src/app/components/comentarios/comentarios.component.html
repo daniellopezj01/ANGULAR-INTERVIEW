@@ -1,0 +1,19 @@
+<ng-container *ngIf="show; then thenTemplate"></ng-container>
+<ng-template #thenTemplate>
+    <div style="background-color: Gray;">
+        <h2>
+            <Strong>Comentarios</Strong>
+        </h2>
+    </div>
+    <div class="text-left">
+        <div *ngFor="let i of listComments;let x = index">
+            <p>
+                <Strong>nombre:</Strong> {{i.name}}</p>
+            <p>
+                <Strong>Comentario:</Strong> {{i.body}}</p>
+            <br>
+        </div>
+    </div>
+    <button type="button" class="btn btn-dark " (click)="emitir()">Emitir</button>
+
+</ng-template>

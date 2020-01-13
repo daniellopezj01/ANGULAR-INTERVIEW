@@ -1,0 +1,26 @@
+<p>postlist works!</p>
+<a routerLink="/post" routerLinkActive="active">envio</a>
+<hr>
+
+<div class="container">
+    <table id="excel-table" class="table table-responsive-lg">
+
+        <thead class="black white-text">
+            <tr>
+                <th *ngFor="let head of headElements" scope="i">{{head}} </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of listInfo;let x = index">
+                <div *ngIf="x<10; then thenTemplate; "> </div>
+                <ng-template #thenTemplate>
+                    <td>{{i.id}}</td>
+                    <td> {{i.title}}</td>
+                    <td> <button type="button" class="btn btn-link" (click)="showDetails(i)">ver</button>
+                    </td>
+                </ng-template>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
